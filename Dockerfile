@@ -14,7 +14,7 @@ RUN apt-get update && \
       libtiff5-dev \
       libjasper-dev \
       libpng12-dev \
-      libgtk-3-dev \
+      libgtk-3-dev
 
       # download and extract opencv
 RUN   mkdir -p /opt 
