@@ -15,15 +15,9 @@ RUN apt-get update && \
       libjasper-dev \
       libpng12-dev \
       libgtk-3-dev \
-      # webcam
-      libv4l-dev \
-      libatlas-base-dev \
-      gfortran
 
       # download and extract opencv
 RUN   mkdir -p /opt 
-
-RUN   echo 'hello'
 
 RUN   cd /opt && \
       wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip && \
@@ -54,7 +48,7 @@ RUN   cd /opt && \
         -D BUILD_FAT_JAVA_LIB=OFF \
         -D BUILD_TESTS=OFF \
         -D BUILD_PERF_TESTS=OFF \
-        -D BUILD_EXAMPLES=OFF \
+        -D BUILD_EXAMPLES=ON \
         -D BUILD_ANDROID_EXAMPLES=OFF \
         -D INSTALL_PYTHON_EXAMPLES=OFF \
         -D INSTALL_C_EXAMPLES=OFF \
@@ -103,3 +97,4 @@ RUN   cd /opt && \
         ldconfig && \
         rm -rf /opt/opencv-${OPENCV_VERSION} && \
         rm -rf /opt/opencv_contrib-${OPENCV_VERSION}
+
