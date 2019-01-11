@@ -23,6 +23,8 @@ RUN apt-get update && \
       # download and extract opencv
 RUN   mkdir -p /opt 
 
+RUN   echo 'hello'
+
 RUN   cd /opt && \
       wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip && \
       unzip ${OPENCV_VERSION}.zip && \
