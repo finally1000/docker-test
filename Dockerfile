@@ -15,6 +15,10 @@ RUN apt-get update && \
       libjasper-dev \
       libpng12-dev \
       libgtk-3-dev \
+      # webcam
+      libv4l-dev \
+      libatlas-base-dev \
+      gfortran && \
 
       # download and extract opencv
       mkdir -p /opt && cd /opt && \
