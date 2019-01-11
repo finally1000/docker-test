@@ -18,10 +18,12 @@ RUN apt-get update && \
       # webcam
       libv4l-dev \
       libatlas-base-dev \
-      gfortran && \
+      gfortran
 
       # download and extract opencv
-      mkdir -p /opt && cd /opt && \
+RUN   mkdir -p /opt 
+
+RUN   cd /opt && \
       wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip && \
       unzip ${OPENCV_VERSION}.zip && \
       rm -rf ${OPENCV_VERSION}.zip && \
